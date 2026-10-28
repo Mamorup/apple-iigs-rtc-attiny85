@@ -1,0 +1,52 @@
+{
+  "variant": "edgefix_v3",
+  "mcu": "ATtiny85",
+  "clock_hz": 16000000,
+  "compiler": "avr-gcc.exe (GCC) 7.3.0",
+  "fuses": {
+    "low": "E1",
+    "high": "5D",
+    "extended": "FF",
+    "lock": "FF (unlocked)"
+  },
+  "files": {
+    "flash.bin": {
+      "bytes": 996,
+      "sha256": "fe3652553e711209d85684448ca82dc29c4391c01bf87ffb99377922468cdce4"
+    },
+    "flash.hex": {
+      "bytes": 2824,
+      "sha256": "5efefc06d835f49387f7f6ea699fe8084ff949c0b18ebd84796e5e8671f88521"
+    },
+    "eeprom_raw.bin": {
+      "bytes": 260,
+      "sha256": "cfe2cab5b94806e34f0bd0e4994f6ff70518997cb7b2eaacbef6ab6f616fced7"
+    },
+    "eeprom.eep": {
+      "bytes": 754,
+      "sha256": "cb1d1457b7790fbe6bf3617e1c384a77b7c0feb567e9cd56b2ebe19f18b60b2a"
+    },
+    "fuses.bin": {
+      "bytes": 3,
+      "sha256": "5e1781c80d3b878076e1c078990c984f825d5f6133e4b9ce7fdcd40b67a1a9cd"
+    },
+    "t48_flash_8k.bin": {
+      "bytes": 8192,
+      "sha256": "36e90c4d943d6861ae004596e55d5c8f8a4a36cf3575366e6d70740549d395dc"
+    },
+    "t48_eeprom_512.bin": {
+      "bytes": 512,
+      "sha256": "244d3a4fc3cb3d58a0eceb5b3d337995c0d8730d8b4857b279b92be33508df72"
+    }
+  },
+  "validation": {
+    "rebuild": "FLASH, EEPROM and fuse bytes match original edgefix_v3 artifacts byte for byte",
+    "protocol_tests": "PASS with native AVR HAL stubs; serial assembler not executed by these tests",
+    "hardware_context": "ATtiny85 RTC used during IIgs bring-up where1Hz was observed and full-machine System Good was obtained",
+    "limitations": [
+      "No runtime EEPROM persistence",
+      "RC oscillator accuracy and battery operation not qualified",
+      "No complete malformed/aborted transaction recovery qualification"
+    ]
+  }
+}

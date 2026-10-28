@@ -1,0 +1,13 @@
+build/
+__pycache__/
+.venv/
+*.py[cod]
+*.elf
+*.o
+*.map
+*.exe
+*.bak
+captures/
+reports/
+.DS_Store
+Thumbs.db

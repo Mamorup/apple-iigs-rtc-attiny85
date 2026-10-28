@@ -1,0 +1,2 @@
+#pragma once
+static inline void wdt_disable(void){}

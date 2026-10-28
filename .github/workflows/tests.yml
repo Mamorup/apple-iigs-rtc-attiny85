@@ -1,0 +1,21 @@
+name: RTC protocol and AVR build
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: Native protocol tests
+        run: python3 tests/run_tests.py
+      - name: Validate published programming files
+        run: python3 tools/verify_images.py releases/edgefix_v3
+      - name: Install AVR toolchain
+        run: sudo apt-get update && sudo apt-get install -y gcc-avr avr-libc binutils-avr
+      - name: Build and validate AVR images
+        run: |
+          python3 tools/build.py
+          python3 tools/verify_images.py build
